@@ -1,0 +1,68 @@
+---
+interface Tier {
+  name: string;
+  tagline: string;
+  description: string;
+  features: string[];
+  cta: string;
+  ctaHref: string;
+  featured: boolean;
+}
+
+interface Props {
+  headline: string;
+  subheadline: string;
+  tiers: Tier[];
+}
+
+const { headline, subheadline, tiers } = Astro.props;
+---
+
+<section class="bg-brand-black py-20 px-6">
+  <div class="max-w-content mx-auto">
+
+    <div class="max-w-xl mb-12">
+      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-white mb-3 md:text-[32px]">
+        {headline}
+      </h2>
+      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {tiers.map((tier) => (
+        <div class={`rounded-lg p-8 flex flex-col gap-6 border border-[0.5px] ${tier.featured ? 'bg-brand-dark border-neutral-700' : 'bg-transparent border-neutral-700'}`}>
+
+          <div>
+            {tier.featured && (
+              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-orange bg-brand-orange-muted px-2.5 py-1 rounded-sm mb-4">
+                Most popular
+              </span>
+            )}
+            <h3 class="font-display font-bold text-xl text-white mb-1">{tier.name}</h3>
+            <p class="font-body text-sm text-neutral-500">{tier.tagline}</p>
+          </div>
+
+          <p class="font-body text-sm text-neutral-400 leading-relaxed">{tier.description}</p>
+
+          <ul class="space-y-2.5 flex-1">
+            {tier.features.map((feature) => (
+              <li class="flex items-start gap-2.5">
+                <span class="text-brand-orange text-sm shrink-0 mt-0.5">✓</span>
+                <span class="font-body text-sm text-neutral-300">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={tier.ctaHref}
+            class={`block text-center font-body font-medium text-sm px-5 py-3 rounded-md transition-opacity ${tier.featured ? 'bg-brand-orange text-white hover:opacity-90' : 'border border-[0.5px] border-neutral-600 text-neutral-300 hover:border-neutral-400'}`}
+          >
+            {tier.cta}
+          </a>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

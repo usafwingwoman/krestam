@@ -1,0 +1,236 @@
+backend:
+  name: github
+  repo: usafwingwoman/krestam
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  # ─── HOME PAGE ────────────────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home Page
+        file: src/content/pages/home.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheadline, name: subheadline, widget: text }
+              - { label: CTA Label, name: cta, widget: string }
+              - { label: CTA Link, name: ctaHref, widget: string }
+              - label: Stats
+                name: stats
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+
+          - label: Tension (The Problem)
+            name: tension
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Body, name: body, widget: text }
+              - label: Points
+                name: points
+                widget: list
+                field: { label: Point, name: item, widget: string }
+
+          - label: For Whom
+            name: forWhom
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - label: Cards
+                name: cards
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Tag, name: tag, widget: string }
+
+          - label: Method
+            name: method
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheadline, name: subheadline, widget: string }
+              - label: Steps
+                name: steps
+                widget: list
+                fields:
+                  - { label: Number, name: number, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+
+          - label: Counselor
+            name: counselor
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Bio, name: bio, widget: text }
+              - label: Credentials
+                name: credentials
+                widget: list
+                field: { label: Credential, name: item, widget: string }
+              - { label: CTA Label, name: cta, widget: string }
+              - { label: CTA Link, name: ctaHref, widget: string }
+
+          - label: Results Section
+            name: results
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheadline, name: subheadline, widget: string }
+
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheadline, name: subheadline, widget: string }
+              - label: Tiers
+                name: tiers
+                widget: list
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Tagline, name: tagline, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - label: Features
+                    name: features
+                    widget: list
+                    field: { label: Feature, name: item, widget: string }
+                  - { label: CTA Label, name: cta, widget: string }
+                  - { label: CTA Link, name: ctaHref, widget: string }
+                  - { label: Featured, name: featured, widget: boolean, default: false }
+
+          - label: Testimonials Section
+            name: testimonials
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Subheadline, name: subheadline, widget: string }
+
+          - label: FAQ
+            name: faq
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Answer, name: answer, widget: text }
+
+          - label: Final CTA
+            name: finalCta
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Body, name: body, widget: text }
+              - { label: CTA Label, name: cta, widget: string }
+              - { label: CTA Link, name: ctaHref, widget: string }
+
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Tagline, name: tagline, widget: string }
+              - label: Nav Links
+                name: navLinks
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Href, name: href, widget: string }
+              - label: Legal Links
+                name: legalLinks
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Href, name: href, widget: string }
+              - { label: Copyright, name: copyright, widget: string }
+
+          - label: WhatsApp Button
+            name: whatsapp
+            widget: object
+            fields:
+              - { label: WhatsApp Link, name: href, widget: string }
+              - { label: Tooltip, name: tooltip, widget: string }
+
+  # ─── BLOG ─────────────────────────────────────────────────────────────────
+  - name: blog
+    label: Blog
+    folder: src/content/blog
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string, default: Prof. Usman }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - label: Tags
+        name: tags
+        widget: list
+        field: { label: Tag, name: item, widget: string }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ─── RESULTS ──────────────────────────────────────────────────────────────
+  - name: results
+    label: Student Results
+    folder: src/content/results
+    create: true
+    extension: json
+    fields:
+      - { label: Student Name, name: studentName, widget: string }
+      - { label: School / University, name: school, widget: string }
+      - { label: Programme, name: program, widget: string }
+      - { label: Year, name: year, widget: number }
+      - { label: Quote, name: quote, widget: text, required: false }
+      - { label: Country, name: country, widget: string }
+      - label: Tier
+        name: tier
+        widget: select
+        options: ['T10', 'T25', 'T50', 'Other']
+
+  # ─── TESTIMONIALS ─────────────────────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    folder: src/content/testimonials
+    create: true
+    extension: json
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Quote, name: quote, widget: text }
+      - { label: School, name: school, widget: string }
+      - { label: Country, name: country, widget: string }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+
+  # ─── CASE STUDIES ─────────────────────────────────────────────────────────
+  - name: caseStudies
+    label: Case Studies
+    folder: src/content/caseStudies
+    create: true
+    slug: '{{fields.slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Student (anonymised), name: student, widget: string }
+      - { label: Challenge, name: challenge, widget: text }
+      - { label: Outcome, name: outcome, widget: text }
+      - label: Programmes Applied To
+        name: programs
+        widget: list
+        field: { label: Programme, name: item, widget: string }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Body, name: body, widget: markdown }

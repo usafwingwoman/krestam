@@ -1,0 +1,37 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  headline: string;
+  items: FAQItem[];
+}
+
+const { headline, items } = Astro.props;
+---
+
+<section class="bg-white py-20 px-6">
+  <div class="max-w-content mx-auto">
+
+    <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-10 md:text-[32px]">
+      {headline}
+    </h2>
+
+    <div class="max-w-2xl divide-y divide-neutral-100">
+      {items.map((item) => (
+        <details class="group py-5 cursor-pointer">
+          <summary class="flex items-center justify-between gap-4 list-none font-display font-semibold text-base text-brand-black select-none [&::-webkit-details-marker]:hidden">
+            {item.question}
+            <span class="text-brand-orange shrink-0 text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="font-body text-sm text-neutral-600 leading-relaxed mt-4 pr-8">
+            {item.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

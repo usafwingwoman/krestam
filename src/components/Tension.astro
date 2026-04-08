@@ -1,0 +1,30 @@
+---
+interface Props {
+  headline: string;
+  body: string;
+  points: string[];
+}
+
+const { headline, body, points } = Astro.props;
+---
+
+<section class="bg-white py-20 px-6 border-y border-[0.5px] border-neutral-100">
+  <div class="max-w-content mx-auto">
+    <div class="max-w-2xl">
+      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-5 md:text-[32px]">
+        {headline}
+      </h2>
+      <p class="font-body text-neutral-600 text-base leading-relaxed mb-8">
+        {body}
+      </p>
+      <ul class="space-y-4">
+        {points.map((point) => (
+          <li class="flex items-start gap-3">
+            <span class="text-brand-orange font-body text-base mt-0.5 select-none shrink-0">—</span>
+            <span class="font-body text-neutral-700 text-base">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

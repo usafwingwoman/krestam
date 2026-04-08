@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  headline: string;
+  subheadline: string;
+}
+
+const { headline, subheadline } = Astro.props;
+const allResults = await getCollection('results');
+---
+
+<section class="bg-white py-20 px-6 border-y border-[0.5px] border-neutral-100">
+  <div class="max-w-content mx-auto">
+
+    <div class="max-w-xl mb-12">
+      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-3 md:text-[32px]">
+        {headline}
+      </h2>
+      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+    </div>
+
+    {allResults.length > 0 ? (
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {allResults.map((result) => (
+          <div class="border border-[0.5px] border-neutral-100 rounded-lg p-6 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-orange bg-brand-orange-light px-2.5 py-1 rounded-sm">
+                {result.data.tier}
+              </span>
+              <span class="font-body text-xs text-neutral-400">{result.data.year}</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-base text-brand-black">{result.data.school}</p>
+              <p class="font-body text-sm text-neutral-500 mt-0.5">{result.data.program}</p>
+            </div>
+            {result.data.quote && (
+              <p class="font-body text-sm text-neutral-600 leading-relaxed italic border-l-2 border-brand-orange pl-3">
+                "{result.data.quote}"
+              </p>
+            )}
+            <p class="font-body text-xs text-neutral-400">{result.data.studentName} · {result.data.country}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="font-body text-sm text-neutral-400 italic">Results coming soon.</p>
+    )}
+
+    <div class="mt-10">
+      <a href="/results" class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-orange hover:opacity-75 transition-opacity">
+        See all results <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>

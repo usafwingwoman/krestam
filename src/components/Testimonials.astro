@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  headline: string;
+  subheadline: string;
+}
+
+const { headline, subheadline } = Astro.props;
+const allTestimonials = await getCollection('testimonials');
+const featured = allTestimonials.filter((t) => t.data.featured);
+const display = featured.length > 0 ? featured : allTestimonials.slice(0, 3);
+---
+
+<section class="bg-neutral-50 py-20 px-6 border-y border-[0.5px] border-neutral-100">
+  <div class="max-w-content mx-auto">
+
+    <div class="max-w-xl mb-12">
+      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-3 md:text-[32px]">
+        {headline}
+      </h2>
+      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+    </div>
+
+    {display.length > 0 ? (
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {display.map((t) => (
+          <div class="bg-white border border-[0.5px] border-neutral-100 rounded-lg p-7 flex flex-col gap-5">
+            <p class="font-body text-base text-neutral-700 leading-relaxed flex-1">
+              "{t.data.quote}"
+            </p>
+            <div class="border-t border-[0.5px] border-neutral-100 pt-4">
+              <p class="font-display font-semibold text-sm text-brand-black">{t.data.name}</p>
+              <p class="font-body text-xs text-neutral-500 mt-0.5">{t.data.role} · {t.data.school}</p>
+              <p class="font-body text-xs text-neutral-400 mt-0.5">{t.data.country}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="font-body text-sm text-neutral-400 italic">Testimonials coming soon.</p>
+    )}
+
+  </div>
+</section>

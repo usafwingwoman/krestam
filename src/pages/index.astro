@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Tension from '../components/Tension.astro';
+import ForWhom from '../components/ForWhom.astro';
+import Method from '../components/Method.astro';
+import Counselor from '../components/Counselor.astro';
+import Results from '../components/Results.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import content from '../content/pages/home.json';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Krestam — College & Career Counseling for India & Gulf Students">
+  <Hero {...content.hero} />
+  <Tension {...content.tension} />
+  <ForWhom {...content.forWhom} />
+  <Method {...content.method} />
+  <Counselor {...content.counselor} />
+  <Results {...content.results} />
+  <Services {...content.services} />
+  <Testimonials {...content.testimonials} />
+  <FAQ {...content.faq} />
+  <FinalCTA {...content.finalCta} />
+  <Footer {...content.footer} />
+  <WhatsAppButton {...content.whatsapp} />
 </Layout>

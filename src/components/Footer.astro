@@ -1,0 +1,63 @@
+---
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface LegalLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  tagline: string;
+  navLinks: NavLink[];
+  legalLinks: LegalLink[];
+  copyright: string;
+}
+
+const { tagline, navLinks, legalLinks, copyright } = Astro.props;
+---
+
+<footer class="bg-brand-black py-16 px-6 border-t border-[0.5px] border-neutral-700">
+  <div class="max-w-content mx-auto">
+
+    <div class="grid grid-cols-1 gap-10 mb-12 md:grid-cols-[1fr_auto] md:gap-16 items-start">
+
+      <!-- Brand -->
+      <div class="max-w-xs">
+        <a href="/" class="font-display font-extrabold text-xl text-white tracking-tight inline-block mb-3">
+          Krestam<span class="text-brand-orange">.</span>
+        </a>
+        <p class="font-body text-sm text-neutral-500 leading-relaxed">{tagline}</p>
+      </div>
+
+      <!-- Nav links -->
+      <nav>
+        <ul class="grid grid-cols-2 gap-x-10 gap-y-3 sm:flex sm:flex-col">
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="font-body text-sm text-neutral-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 border-t border-[0.5px] border-neutral-800 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <p class="font-body text-xs text-neutral-600">{copyright}</p>
+      <div class="flex items-center gap-5">
+        {legalLinks.map((link) => (
+          <a href={link.href} class="font-body text-xs text-neutral-600 hover:text-neutral-400 transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</footer>

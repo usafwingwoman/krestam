@@ -1,0 +1,38 @@
+---
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  headline: string;
+  subheadline: string;
+  steps: Step[];
+}
+
+const { headline, subheadline, steps } = Astro.props;
+---
+
+<section class="bg-white py-20 px-6 border-y border-[0.5px] border-neutral-100">
+  <div class="max-w-content mx-auto">
+
+    <div class="max-w-xl mb-12">
+      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-3 md:text-[32px]">
+        {headline}
+      </h2>
+      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-0 md:grid-cols-2">
+      {steps.map((step, i) => (
+        <div class={`p-8 border-[0.5px] border-neutral-100 ${i === 0 ? 'md:border-r' : ''} ${i === 1 ? 'md:border-l md:border-t-0 border-t-0' : ''} ${i === 2 ? 'md:border-r md:border-t' : ''} ${i === 3 ? 'md:border-l md:border-t' : ''}`}>
+          <p class="font-display font-extrabold text-[40px] text-brand-orange-muted leading-none mb-5 tracking-tight">{step.number}</p>
+          <h3 class="font-display font-bold text-[17px] text-brand-black mb-2">{step.title}</h3>
+          <p class="font-body text-sm text-neutral-600 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

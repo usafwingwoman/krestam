@@ -1,0 +1,58 @@
+---
+interface Props {
+  eyebrow: string;
+  name: string;
+  title: string;
+  bio: string;
+  credentials: string[];
+  cta: string;
+  ctaHref: string;
+}
+
+const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
+---
+
+<section class="bg-neutral-50 py-20 px-6">
+  <div class="max-w-content mx-auto">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16 items-start">
+
+      <!-- Photo placeholder -->
+      <div class="aspect-[4/5] bg-neutral-100 rounded-lg border border-[0.5px] border-neutral-100 flex items-end p-6 max-w-sm md:max-w-none">
+        <div>
+          <p class="font-display font-bold text-lg text-brand-black">{name}</p>
+          <p class="font-body text-sm text-neutral-500 mt-1">{title}</p>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col gap-6">
+        <div>
+          <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-orange mb-4">{eyebrow}</p>
+          <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-4 md:text-[32px]">
+            {name}
+          </h2>
+          <p class="font-body text-neutral-500 text-sm mb-5">{title}</p>
+          <p class="font-body text-neutral-600 text-base leading-relaxed">{bio}</p>
+        </div>
+
+        <ul class="space-y-3">
+          {credentials.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="text-brand-orange shrink-0 mt-0.5 text-sm">✓</span>
+              <span class="font-body text-sm text-neutral-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={ctaHref}
+          class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-orange hover:opacity-75 transition-opacity w-fit"
+        >
+          {cta}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

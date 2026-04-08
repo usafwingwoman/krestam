@@ -1,0 +1,50 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  eyebrow: string;
+  headline: string;
+  subheadline: string;
+  cta: string;
+  ctaHref: string;
+  stats: Stat[];
+}
+
+const { eyebrow, headline, subheadline, cta, ctaHref, stats } = Astro.props;
+---
+
+<section class="bg-neutral-50 pt-20 pb-20 px-6 md:pt-28">
+  <div class="max-w-content mx-auto">
+
+    <div class="max-w-2xl">
+      <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-orange mb-5">
+        {eyebrow}
+      </p>
+      <h1 class="font-display font-extrabold text-[42px] leading-[1.05] tracking-[-1.5px] text-brand-black mb-5 md:text-[56px]">
+        {headline}
+      </h1>
+      <p class="font-body text-neutral-600 text-[17px] leading-relaxed mb-8 max-w-xl">
+        {subheadline}
+      </p>
+      <a
+        href={ctaHref}
+        class="inline-block bg-brand-orange text-white font-body font-medium text-sm px-6 py-3.5 rounded-md hover:opacity-90 transition-opacity"
+      >
+        {cta}
+      </a>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-[0.5px] border-neutral-100 grid grid-cols-3 gap-6 max-w-md">
+      {stats.map((stat) => (
+        <div>
+          <p class="font-display font-extrabold text-2xl text-brand-black tracking-tight">{stat.value}</p>
+          <p class="font-body text-xs text-neutral-500 mt-1 leading-snug">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

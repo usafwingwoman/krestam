@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "eyebrow": "College & Career Counseling",
+    "headline": "Get into the university you deserve.",
+    "subheadline": "Strategic admissions guidance for students in India and the Gulf — from profile assessment to offer letter.",
+    "cta": "Book a Free Strategy Session",
+    "ctaHref": "/apply",
+    "stats": [
+      { "value": "200+", "label": "Students placed" },
+      { "value": "15+", "label": "Countries represented" },
+      { "value": "Top 10", "label": "Universities in our track record" }
+    ]
+  },
+  "tension": {
+    "headline": "The system isn't built for students like yours.",
+    "body": "Families in India and the Gulf face one of the most competitive admissions processes in history — without a guide who actually knows it from the inside. Most students apply blind, follow generic advice, and lose opportunities they were qualified to win.",
+    "points": [
+      "School counselors handle hundreds of students — yours isn't getting personalised attention",
+      "Generic guidance services copy-paste strategies that don't account for your profile",
+      "One wrong move — a mismatched school list, a weak essay — can cost you the admit"
+    ]
+  },
+  "forWhom": {
+    "headline": "Who we work with",
+    "cards": [
+      {
+        "title": "High School Students",
+        "description": "Applying to undergraduate programmes in the US, UK, Canada, or Europe. We build your application from strategy to final submission.",
+        "tag": "UG Admissions"
+      },
+      {
+        "title": "Graduates & Professionals",
+        "description": "Targeting top MBA, Master's, or PhD programmes. We position your profile to stand out in a competitive global pool.",
+        "tag": "PG & MBA"
+      },
+      {
+        "title": "Families",
+        "description": "Parents who want expert guidance, clear communication, and a trustworthy partner at every stage of the process.",
+        "tag": "Family Support"
+      }
+    ]
+  },
+  "method": {
+    "headline": "The Krestam Method",
+    "subheadline": "A structured four-step process built around your story — not a template.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Deep Profile Assessment",
+        "description": "We map your academic record, activities, goals, and values to uncover the strongest angles of your application before a single word is written."
+      },
+      {
+        "number": "02",
+        "title": "Strategic School Selection",
+        "description": "We build a balanced, realistic school list — reach, target, and likely — tailored to your profile, goals, and budget."
+      },
+      {
+        "number": "03",
+        "title": "Story & Essay Development",
+        "description": "We craft essays that are specific, authentic, and memorable. Your voice, sharpened into something admissions officers remember."
+      },
+      {
+        "number": "04",
+        "title": "End-to-End Execution",
+        "description": "From test prep strategy to financial aid, we track every deadline and keep your application airtight through the final decision."
+      }
+    ]
+  },
+  "counselor": {
+    "eyebrow": "Your counselor",
+    "name": "Prof. Usman",
+    "title": "Founder & Lead Counselor",
+    "bio": "Prof. Usman has spent over a decade helping students from India, the UAE, Saudi Arabia, and Qatar gain admission to some of the world's most selective universities. He works with every student personally — no junior consultants, no outsourced essays.",
+    "credentials": [
+      "10+ years of college and career counseling experience",
+      "Students placed at Oxford, MIT, LSE, NUS, and more",
+      "Deep expertise in US, UK, Canadian, and European admissions",
+      "Fluent in the expectations of Gulf and Indian school systems"
+    ],
+    "cta": "Learn more about Prof. Usman",
+    "ctaHref": "/about"
+  },
+  "results": {
+    "headline": "Where our students go",
+    "subheadline": "A sample of recent placements across undergraduate and postgraduate programmes."
+  },
+  "services": {
+    "headline": "How we work together",
+    "subheadline": "Two formats. Both built around your profile and goals.",
+    "tiers": [
+      {
+        "name": "Focused Guidance",
+        "tagline": "Targeted help at a critical stage",
+        "description": "For students who need expert input at a specific point — essay review, school list strategy, or interview preparation.",
+        "features": [
+          "School list consultation",
+          "Essay review (up to 3 drafts per essay)",
+          "Interview preparation session",
+          "Application checklist and timeline"
+        ],
+        "cta": "Enquire about Focused Guidance",
+        "ctaHref": "/apply",
+        "featured": false
+      },
+      {
+        "name": "Full Partnership",
+        "tagline": "Full support from start to offer letter",
+        "description": "Our comprehensive engagement. Prof. Usman works with you from initial profile assessment through your final decision.",
+        "features": [
+          "Everything in Focused Guidance",
+          "Full profile and positioning assessment",
+          "Unlimited essay development and drafts",
+          "Financial aid and scholarship strategy",
+          "Ongoing 1:1 sessions with Prof. Usman",
+          "Post-admission transition support"
+        ],
+        "cta": "Apply for Full Partnership",
+        "ctaHref": "/apply",
+        "featured": true
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What families say",
+    "subheadline": "From students who went through the process with us."
+  },
+  "faq": {
+    "headline": "Common questions",
+    "items": [
+      {
+        "question": "Where are your students based?",
+        "answer": "Most of our students are based in India, the UAE, Saudi Arabia, and Qatar — though we work with families across the Gulf and South Asia. All counseling sessions happen online via video call, so location is never a barrier."
+      },
+      {
+        "question": "When should we start working with you?",
+        "answer": "For undergraduate applications, ideally in Grade 10 or 11. For graduate programmes, 12–18 months before your target intake. That said, we've helped students at every stage — including those applying with a short runway."
+      },
+      {
+        "question": "What universities do your students target?",
+        "answer": "We work across a wide range — from Ivy League and Oxbridge to strong universities in Canada, Australia, Singapore, and Europe. Our focus is always on the right fit for each student, not just prestige for its own sake."
+      },
+      {
+        "question": "Does Prof. Usman personally work with every student?",
+        "answer": "Yes. We deliberately keep our intake small so that Prof. Usman can work with every student personally. No junior consultants, no outsourced work."
+      },
+      {
+        "question": "What does the process look like?",
+        "answer": "It starts with a free 30-minute strategy session where Prof. Usman reviews your profile and outlines a plan. From there, we agree on an engagement format and begin work. There's no pressure and no commitment required from the first call."
+      },
+      {
+        "question": "Do you help with financial aid?",
+        "answer": "Yes — financial aid and scholarship strategy is part of our Full Partnership engagement. We help identify merit and need-based opportunities and build a realistic financial plan alongside your school list."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Start here",
+    "headline": "Ready to build an application that gets you in?",
+    "body": "Book a free 30-minute strategy session with Prof. Usman. No commitment — just a clear plan for what to do next.",
+    "cta": "Book Your Free Strategy Session",
+    "ctaHref": "/apply"
+  },
+  "footer": {
+    "tagline": "Expert college and career counseling for students in India and the Gulf.",
+    "navLinks": [
+      { "label": "College Admissions", "href": "/services" },
+      { "label": "Career Guidance", "href": "/services" },
+      { "label": "About Usman", "href": "/about" },
+      { "label": "Results", "href": "/results" },
+      { "label": "Resources", "href": "/blog" },
+      { "label": "Apply", "href": "/apply" }
+    ],
+    "legalLinks": [
+      { "label": "Privacy Policy", "href": "/privacy" }
+    ],
+    "copyright": "© 2025 Krestam. All rights reserved."
+  },
+  "whatsapp": {
+    "href": "https://wa.me/PLACEHOLDER",
+    "tooltip": "Chat with us on WhatsApp"
+  }
+}
