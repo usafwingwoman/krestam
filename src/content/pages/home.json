@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "College & Career Counseling",
-    "headline": "Get into the university you deserve.",
-    "subheadline": "Strategic admissions guidance for students in India and the Gulf — from profile assessment to offer letter.",
+    "headline": "Your application tells a story. Let's make it the right one.",
+    "subheadline": "Most applications look the same. Yours won't — we'll make sure you're someone they remember.",
     "cta": "Book a Free Strategy Session",
     "ctaHref": "/apply",
     "stats": [
@@ -24,19 +24,19 @@
     "headline": "Who we work with",
     "cards": [
       {
-        "title": "High School Students",
-        "description": "Applying to undergraduate programmes in the US, UK, Canada, or Europe. We build your application from strategy to final submission.",
-        "tag": "UG Admissions"
+        "title": "School Students",
+        "description": "Most families start thinking about university applications in Grade 11. By then, half the work is already done — or undone. We start earlier, build deliberately, and make sure your profile tells a story worth accepting.",
+        "tag": "Undergraduate Admissions"
       },
       {
-        "title": "Graduates & Professionals",
-        "description": "Targeting top MBA, Master's, or PhD programmes. We position your profile to stand out in a competitive global pool.",
-        "tag": "PG & MBA"
-      },
-      {
-        "title": "Families",
-        "description": "Parents who want expert guidance, clear communication, and a trustworthy partner at every stage of the process.",
+        "title": "Parents & Families",
+        "description": "Parents carry this process too. The stakes are high, the options are overwhelming, and most of the advice online is written for American students. We work with the whole family — clear communication, honest assessments, and no surprises.",
         "tag": "Family Support"
+      },
+      {
+        "title": "Recent Grads & Early Career",
+        "description": "Our most recent career coaching client landed a $150K offer in her first role out of university. Western job markets reward preparation — the right interview mindset, behavioral frameworks, and negotiation strategy. Most international graduates show up talented and underprepared. We fix that.",
+        "tag": "Young Professionals"
       }
     ]
   },
@@ -46,23 +46,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "Deep Profile Assessment",
-        "description": "We map your academic record, activities, goals, and values to uncover the strongest angles of your application before a single word is written."
+        "title": "Discovery",
+        "description": "Not an intake form. A genuine conversation about who your student is — what drives them, what they're good at, what they want from university and from life. Most applications fail because they start with schools. We start with the student."
       },
       {
         "number": "02",
-        "title": "Strategic School Selection",
-        "description": "We build a balanced, realistic school list — reach, target, and likely — tailored to your profile, goals, and budget."
+        "title": "Profile Design",
+        "description": "Every student has a story worth telling. Most never figure out what it is. We identify the narrative that makes your student compelling — not just qualified — and build a profile that elite admissions committees actually remember."
       },
       {
         "number": "03",
-        "title": "Story & Essay Development",
-        "description": "We craft essays that are specific, authentic, and memorable. Your voice, sharpened into something admissions officers remember."
+        "title": "Execution",
+        "description": "This is where the work happens. Essays, activities, recommendations, timelines — every element of the application built and reviewed with precision. No scrambling. No last-minute chaos."
       },
       {
         "number": "04",
-        "title": "End-to-End Execution",
-        "description": "From test prep strategy to financial aid, we track every deadline and keep your application airtight through the final decision."
+        "title": "Future Positioning",
+        "description": "Getting in is not the finish line. We position every student for what comes after — whether that's a competitive career in a Western job market or the foundation for their own venture. Acceptance is step one. We plan for the rest."
       }
     ]
   },

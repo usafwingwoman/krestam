@@ -23,13 +23,8 @@ const { headline, cards } = Astro.props;
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {cards.map((card) => (
         <div class="bg-white border border-[0.5px] border-neutral-100 rounded-lg p-7 flex flex-col gap-4">
-          <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-orange bg-brand-orange-light px-2.5 py-1 rounded-sm w-fit">
-            {card.tag}
-          </span>
-          <div>
-            <h3 class="font-display font-bold text-[17px] text-brand-black mb-2">{card.title}</h3>
-            <p class="font-body text-sm text-neutral-600 leading-relaxed">{card.description}</p>
-          </div>
+          <h3 class="font-display font-bold text-[17px] text-brand-black">{card.title}</h3>
+          <p class="font-body text-sm text-neutral-600 leading-relaxed">{card.description}</p>
         </div>
       ))}
     </div>

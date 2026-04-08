@@ -1,30 +1,43 @@
 ---
-interface Props {
-  headline: string;
-  body: string;
-  points: string[];
-}
-
-const { headline, body, points } = Astro.props;
+// Content is hardcoded — not driven by props or home.json
+const tensions = [
+  {
+    number: "01",
+    text: "The applicant pool is global now. Your child isn't competing with the kid next door. They're competing with students from 150 countries who've been coached for this."
+  },
+  {
+    number: "02",
+    text: "A good rank gets you considered. A compelling narrative gets you accepted. Most students only work on one of these."
+  },
+  {
+    number: "03",
+    text: "Getting into a great university is not the same as building a great career. Most counseling stops at acceptance. Ours doesn't."
+  }
+]
 ---
 
-<section class="bg-white py-20 px-6 border-y border-[0.5px] border-neutral-100">
-  <div class="max-w-content mx-auto">
-    <div class="max-w-2xl">
-      <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-5 md:text-[32px]">
-        {headline}
-      </h2>
-      <p class="font-body text-neutral-600 text-base leading-relaxed mb-8">
-        {body}
-      </p>
-      <ul class="space-y-4">
-        {points.map((point) => (
-          <li class="flex items-start gap-3">
-            <span class="text-brand-orange font-body text-base mt-0.5 select-none shrink-0">—</span>
-            <span class="font-body text-neutral-700 text-base">{point}</span>
-          </li>
-        ))}
-      </ul>
+<section class="py-24 border-t border-neutral-100">
+  <div class="max-w-content mx-auto px-10">
+
+    <p class="text-xs font-medium tracking-[2px] uppercase text-neutral-400 mb-16">
+      The problem
+    </p>
+
+    <div class="flex flex-col divide-y divide-neutral-100">
+      {tensions.map((item) => (
+        <div class="flex items-start gap-12 py-12">
+
+          <span class="font-display font-extrabold text-5xl leading-none text-brand-orange-muted shrink-0 w-16">
+            {item.number}
+          </span>
+
+          <p class="font-display font-bold text-2xl md:text-3xl leading-snug tracking-tight text-brand-dark max-w-3xl">
+            {item.text}
+          </p>
+
+        </div>
+      ))}
     </div>
+
   </div>
 </section>

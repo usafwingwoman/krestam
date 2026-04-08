@@ -4,8 +4,9 @@ import Hero from '../components/Hero.astro';
 import Tension from '../components/Tension.astro';
 import ForWhom from '../components/ForWhom.astro';
 import Method from '../components/Method.astro';
-import Counselor from '../components/Counselor.astro';
+import Team from '../components/Team.astro';
 import Results from '../components/Results.astro';
+import Placements from '../components/Placements.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
@@ -18,10 +19,11 @@ import content from '../content/pages/home.json';
 
 <Layout title="Krestam — College & Career Counseling for India & Gulf Students">
   <Hero {...content.hero} />
-  <Tension {...content.tension} />
+  <Tension />
   <ForWhom {...content.forWhom} />
   <Method {...content.method} />
-  <Counselor {...content.counselor} />
+  <Team />
+  <Placements />
   <Results {...content.results} />
   <Services {...content.services} />
   <Testimonials {...content.testimonials} />

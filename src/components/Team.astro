@@ -1,0 +1,123 @@
+---
+const sage = {
+  initials: "SJP",
+  photo: "/images/Military-profile-photo.png",
+  photoLeft: false,
+  eyebrow: "Co-founder & Chief Strategist",
+  name: "Sage J Phoenix",
+  title: "U.S. Air Force Officer · Strategic Planner · Operator",
+  tagline: "Forged in Combat.\nBuilt to Lead from the Front.",
+  bio: [
+    "My real origin story started when I joined the U.S. Air Force as an Officer in 2003. I graduated #1 of 57 from Joint Specialized Undergraduate Navigator Training — and took home both academic awards.",
+    "Thirty-plus combat missions. Over 250 combat hours in hostile territory. An Air Medal for meritorious service. The General handing me my second award said: \"You've got a bright career ahead, Lieutenant.\" He wasn't wrong. Just early.",
+    "What followed wasn't a straight line. There were crashes. There was wreckage. There was rebuilding — book by book, decision by decision, standard by standard. Three master's degrees. Dozens of organizations rebuilt from the inside. Revenue grown 560%. Retention at 98%.",
+    "The through line was always the same: Walk in. Assess. Build. Execute. Leave it better than you found it. That's not a philosophy. That's a track record.",
+    "I bring that standard to every student we work with at Krestam — because your child's future deserves nothing less."
+  ],
+  stats: [
+    { label: "Class rank", value: "#1 of 57" },
+    { label: "Academic awards", value: "Both" },
+    { label: "Combat missions", value: "30+" },
+    { label: "Combat hours", value: "250+" },
+    { label: "Clearance held", value: "TS/SCI" },
+    { label: "Meritorious service", value: "Air Medal" },
+    { label: "Master's degrees", value: "3" },
+    { label: "Revenue growth led", value: "560%" },
+  ]
+}
+
+const usman = {
+  initials: "U",
+  photo: null,
+  photoLeft: true,
+  eyebrow: "Co-founder & Lead Counselor",
+  name: "Prof. Usman",
+  title: "MIT-Trained · Adjunct Professor · Global Advisor",
+  tagline: "MIT-Trained.\nGlobally Experienced.\nInvested in Every Student.",
+  bio: [
+    "Some advisors know about universities. Prof. Usman knows how they think — because he's spent decades working inside them, alongside them, and at the highest levels of the institutions that shape them.",
+    "Three master's degrees — two from MIT, one from a joint MIT-Harvard program. Decades of global advisory experience across industries and institutions on multiple continents. Currently teaching at the University of Texas-Dallas, where he sits inside the American academic system your student is trying to enter.",
+    "He has spent his career integrating complex systems into coherent strategies. At Krestam, that means one thing: seeing your student as a complete picture — who they are, what they're capable of, and where they're going — and building a case that elite admissions committees can't ignore."
+  ],
+  stats: [
+    { label: "Master's degrees", value: "3" },
+    { label: "MIT degrees", value: "2" },
+    { label: "MIT-Harvard joint", value: "1" },
+    { label: "Current role", value: "Adjunct Prof." },
+    { label: "University", value: "UT Dallas" },
+  ]
+}
+
+const founders = [sage, usman]
+---
+
+<section class="py-24 border-t border-neutral-100">
+  <div class="max-w-content mx-auto px-10">
+
+    <p class="text-xs font-medium tracking-[2px] uppercase text-neutral-400 mb-16">
+      Our team
+    </p>
+
+    <div class="flex flex-col gap-20">
+      {founders.map((founder) => (
+        <div class={`grid grid-cols-1 gap-12 items-start pt-16 border-t border-neutral-100 first:border-t-0 first:pt-0 ${founder.photoLeft ? 'md:grid-cols-[40%_60%]' : 'md:grid-cols-[60%_40%]'}`}>
+
+          <div class={`flex flex-col gap-5 px-[100px] ${founder.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
+            <div>
+              <p class="text-xs font-medium tracking-[2px] uppercase text-brand-orange mb-3">
+                {founder.eyebrow}
+              </p>
+              <h2 class="font-display font-extrabold text-3xl tracking-tight mb-1">
+                {founder.name}
+              </h2>
+              <p class="text-sm text-neutral-500">{founder.title}</p>
+            </div>
+
+            <p class="font-display font-bold text-xl leading-snug pl-4 border-l-[3px] border-brand-orange whitespace-pre-line">
+              {founder.tagline}
+            </p>
+
+            <div class="flex flex-col gap-3">
+              {founder.bio.map((para) => (
+                <p class="text-sm leading-relaxed text-neutral-600">{para}</p>
+              ))}
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              {founder.stats.map((stat) => (
+                <div class="bg-neutral-50 rounded-lg p-3">
+                  <p class="text-xs text-neutral-400 mb-1">{stat.label}</p>
+                  <p class="font-display font-bold text-sm text-brand-dark">{stat.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class={`flex flex-col gap-6 ${founder.photoLeft ? 'md:order-1' : 'md:order-2'}`}>
+            {founder.photo ? (
+              <div class="sticky top-8 h-full min-h-[600px] rounded-xl overflow-hidden">
+                <img
+                  src={founder.photo}
+                  alt={`Photo of ${founder.name}`}
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div class="sticky top-8 min-h-[600px] bg-neutral-50 border border-thin border-neutral-100 rounded-xl flex items-center justify-center">
+                <div class="text-center">
+                  <span class="font-display font-extrabold text-6xl text-neutral-400">
+                    {founder.initials}
+                  </span>
+                  <p class="text-xs text-neutral-400 mt-2">Photo placeholder</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
