@@ -25,7 +25,7 @@ const allResults = await getCollection('results');
         {allResults.map((result) => (
           <div class="border border-[0.5px] border-neutral-100 rounded-lg p-6 flex flex-col gap-4">
             <div class="flex items-center justify-between">
-              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-orange bg-brand-orange-light px-2.5 py-1 rounded-sm">
+              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-amber-dark bg-brand-amber-ghost px-2.5 py-1 rounded-sm">
                 {result.data.tier}
               </span>
               <span class="font-body text-xs text-neutral-400">{result.data.year}</span>
@@ -35,7 +35,7 @@ const allResults = await getCollection('results');
               <p class="font-body text-sm text-neutral-500 mt-0.5">{result.data.program}</p>
             </div>
             {result.data.quote && (
-              <p class="font-body text-sm text-neutral-600 leading-relaxed italic border-l-2 border-brand-orange pl-3">
+              <p class="font-body text-sm text-neutral-600 leading-relaxed italic border-l-2 border-brand-amber pl-3">
                 "{result.data.quote}"
               </p>
             )}
@@ -48,7 +48,7 @@ const allResults = await getCollection('results');
     )}
 
     <div class="mt-10">
-      <a href="/results" class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-orange hover:opacity-75 transition-opacity">
+      <a href="/results" class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-amber-dark hover:opacity-75 transition-opacity">
         See all results <span aria-hidden="true">→</span>
       </a>
     </div>

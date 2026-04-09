@@ -62,9 +62,9 @@ const founders = [sage, usman]
       {founders.map((founder) => (
         <div class={`grid grid-cols-1 gap-12 items-start pt-16 border-t border-neutral-100 first:border-t-0 first:pt-0 ${founder.photoLeft ? 'md:grid-cols-[40%_60%]' : 'md:grid-cols-[60%_40%]'}`}>
 
-          <div class={`flex flex-col gap-5 px-[100px] ${founder.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
+          <div class={`flex flex-col gap-5 ${founder.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
             <div>
-              <p class="text-xs font-medium tracking-[2px] uppercase text-brand-orange mb-3">
+              <p class="text-xs font-medium tracking-[2px] uppercase text-brand-amber-dark mb-3">
                 {founder.eyebrow}
               </p>
               <h2 class="font-display font-extrabold text-3xl tracking-tight mb-1">
@@ -73,7 +73,7 @@ const founders = [sage, usman]
               <p class="text-sm text-neutral-500">{founder.title}</p>
             </div>
 
-            <p class="font-display font-bold text-xl leading-snug pl-4 border-l-[3px] border-brand-orange whitespace-pre-line">
+            <p class="font-display font-bold text-xl leading-snug pl-4 border-l-[3px] border-brand-amber whitespace-pre-line">
               {founder.tagline}
             </p>
 

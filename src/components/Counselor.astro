@@ -27,7 +27,7 @@ const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
       <!-- Content -->
       <div class="flex flex-col gap-6">
         <div>
-          <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-orange mb-4">{eyebrow}</p>
+          <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-amber-dark mb-4">{eyebrow}</p>
           <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-4 md:text-[32px]">
             {name}
           </h2>
@@ -38,7 +38,7 @@ const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
         <ul class="space-y-3">
           {credentials.map((item) => (
             <li class="flex items-start gap-3">
-              <span class="text-brand-orange shrink-0 mt-0.5 text-sm">✓</span>
+              <span class="text-brand-amber-dark shrink-0 mt-0.5 text-sm">✓</span>
               <span class="font-body text-sm text-neutral-700">{item}</span>
             </li>
           ))}
@@ -46,7 +46,7 @@ const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
 
         <a
           href={ctaHref}
-          class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-orange hover:opacity-75 transition-opacity w-fit"
+          class="inline-flex items-center gap-2 font-body text-sm font-medium text-brand-amber-dark hover:opacity-75 transition-opacity w-fit"
         >
           {cta}
           <span aria-hidden="true">→</span>

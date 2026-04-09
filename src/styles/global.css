@@ -1,11 +1,54 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand colors */
+  --color-brand-amber: #D4700A;
+  --color-brand-amber-dark: #B35E08;
+  --color-brand-amber-mid: #D4700A99;
+  --color-brand-amber-ghost: #D4700A22;
+  --color-brand-black: #111111;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-bg: #FFFFFF;
+
+  /* Semantic content colors */
+  --color-content-on-light-primary: #111111;
+  --color-content-on-light-secondary: #444444;
+  --color-content-on-light-muted: #666666;
+  --color-content-on-dark-primary: #FFFFFF;
+  --color-content-on-dark-secondary: #D1D1D1;
+  --color-content-on-dark-muted: #A0A0A0;
+
+  /* Border colors */
+  --color-border-light: #E5E5E5;
+  --color-border-dark: #2A2A2A;
+
+  /* Fonts */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Font sizes */
+  --text-hero: 48px;
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -1.5px;
+  --text-section: 30px;
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.5px;
+}
+
+@utility max-w-content {
+  max-width: 1100px;
+}
+
+@utility border-thin {
+  border-width: 0.5px;
+}
+
 html,
 body {
   margin: 0;
   width: 100%;
   min-width: 320px;
-  background-color: #f7f7f5;
+  background-color: #FFFFFF;
   color: #0e0e0e;
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;

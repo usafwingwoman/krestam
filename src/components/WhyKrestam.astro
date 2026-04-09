@@ -1,0 +1,55 @@
+---
+const reasons = [
+  {
+    number: "01",
+    title: "MIT-Trained Expertise",
+    body: "Two master's degrees from MIT and a joint MIT-Harvard program sit at the core of our academic counsel. You're not getting generalist advice — you're getting decades of institutional knowledge from someone who understands how elite universities think, because he's been inside them."
+  },
+  {
+    number: "02",
+    title: "Beyond Acceptance",
+    body: "Most counseling stops the moment your student gets in. Ours doesn't. We connect every university decision to a career outcome — so your student isn't just admitted to a great school, they're positioned for a great future."
+  },
+  {
+    number: "03",
+    title: "A System, Not a Hunch",
+    body: "Our four-stage method — Discovery, Profile Design, Execution, Future Positioning — is a repeatable, proven process built on military-grade strategic planning. Nothing is left to improvisation. Every decision has a reason. Every step has a standard."
+  },
+  {
+    number: "04",
+    title: "We Start Earlier Than Everyone Else",
+    body: "By the time most families begin thinking about applications, the window to meaningfully strengthen a profile is already closing. We work with students from Grade 8 — building the story, the activities, and the narrative long before the deadline pressure begins."
+  }
+]
+---
+
+<section class="py-24 border-t border-neutral-100">
+  <div class="max-w-content mx-auto px-10">
+
+    <div class="mb-16">
+      <p class="text-xs font-medium tracking-[2px] uppercase text-neutral-400 mb-4">
+        Why families choose Krestam
+      </p>
+      <h2 class="font-display font-extrabold text-3xl tracking-tight">
+        Not just another counseling service.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
+      {reasons.map((reason) => (
+        <div class="bg-white p-10 flex flex-col gap-4">
+          <span class="font-display font-extrabold text-4xl leading-none text-brand-amber-ghost">
+            {reason.number}
+          </span>
+          <h3 class="font-display font-bold text-xl tracking-tight text-brand-dark">
+            {reason.title}
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-600">
+            {reason.body}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

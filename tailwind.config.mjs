@@ -5,20 +5,26 @@ export default {
     extend: {
       colors: {
         brand: {
-          orange: '#C8590A',
-          'orange-light': '#C8590A15',
-          'orange-muted': '#C8590A22',
-          black: '#0E0E0E',
-          dark: '#1a1a1a',
+          amber: '#D4700A',
+          'amber-dark': '#B35E08',
+          'amber-mid': '#D4700A99',
+          'amber-ghost': '#D4700A22',
+          black: '#111111',
+          dark: '#1A1A1A',
+          bg: '#FAFAF8',
         },
-        neutral: {
-          50: '#f7f7f5',
-          100: '#e5e5e5',
-          400: '#aaa',
-          500: '#888',
-          600: '#666',
-          700: '#555',
+        content: {
+          'on-light-primary': '#111111',
+          'on-light-secondary': '#444444',
+          'on-light-muted': '#666666',
+          'on-dark-primary': '#FFFFFF',
+          'on-dark-secondary': '#D1D1D1',
+          'on-dark-muted': '#A0A0A0',
         },
+        border: {
+          light: '#E5E5E5',
+          dark: '#2A2A2A',
+        }
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],

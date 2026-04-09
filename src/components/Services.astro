@@ -34,7 +34,7 @@ const { headline, subheadline, tiers } = Astro.props;
 
           <div>
             {tier.featured && (
-              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-orange bg-brand-orange-muted px-2.5 py-1 rounded-sm mb-4">
+              <span class="inline-block text-[11px] font-body font-medium tracking-wider uppercase text-brand-amber bg-brand-amber-ghost px-2.5 py-1 rounded-sm mb-4">
                 Most popular
               </span>
             )}
@@ -42,12 +42,12 @@ const { headline, subheadline, tiers } = Astro.props;
             <p class="font-body text-sm text-neutral-500">{tier.tagline}</p>
           </div>
 
-          <p class="font-body text-sm text-neutral-400 leading-relaxed">{tier.description}</p>
+          <p class="font-body text-sm text-content-on-dark-muted leading-relaxed">{tier.description}</p>
 
           <ul class="space-y-2.5 flex-1">
             {tier.features.map((feature) => (
               <li class="flex items-start gap-2.5">
-                <span class="text-brand-orange text-sm shrink-0 mt-0.5">✓</span>
+                <span class="text-brand-amber text-sm shrink-0 mt-0.5">✓</span>
                 <span class="font-body text-sm text-neutral-300">{feature}</span>
               </li>
             ))}
@@ -55,7 +55,7 @@ const { headline, subheadline, tiers } = Astro.props;
 
           <a
             href={tier.ctaHref}
-            class={`block text-center font-body font-medium text-sm px-5 py-3 rounded-md transition-opacity ${tier.featured ? 'bg-brand-orange text-white hover:opacity-90' : 'border border-[0.5px] border-neutral-600 text-neutral-300 hover:border-neutral-400'}`}
+            class={`block text-center font-body font-medium text-sm px-5 py-3 rounded-md transition-opacity ${tier.featured ? 'bg-brand-amber text-white hover:opacity-90' : 'border border-[0.5px] border-neutral-600 text-neutral-300 hover:border-neutral-400'}`}
           >
             {tier.cta}
           </a>
