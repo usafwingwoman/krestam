@@ -25,7 +25,7 @@ const { headline, subheadline, tiers } = Astro.props;
       <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-white mb-3 md:text-[32px]">
         {headline}
       </h2>
-      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+      <p class="font-body text-content-on-dark-muted text-base">{subheadline}</p>
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -39,7 +39,7 @@ const { headline, subheadline, tiers } = Astro.props;
               </span>
             )}
             <h3 class="font-display font-bold text-xl text-white mb-1">{tier.name}</h3>
-            <p class="font-body text-sm text-neutral-500">{tier.tagline}</p>
+            <p class="font-body text-sm text-content-on-dark-muted">{tier.tagline}</p>
           </div>
 
           <p class="font-body text-sm text-content-on-dark-muted leading-relaxed">{tier.description}</p>

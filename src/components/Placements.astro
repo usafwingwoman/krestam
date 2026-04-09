@@ -15,7 +15,7 @@ const schools = [
 ]
 ---
 
-<section class="py-24 bg-white border-t border-neutral-100">
+<section class="py-24 bg-neutral-50 border-t border-neutral-100">
   <div class="max-w-content mx-auto px-10">
 
     <div class="mb-16">
@@ -25,14 +25,14 @@ const schools = [
       <h2 class="font-display font-extrabold text-3xl tracking-tight mb-4">
         Some of the most selective universities in the world.
       </h2>
-      <p class="text-sm text-neutral-500">
+      <p class="text-sm text-content-on-light-muted">
         Our students have earned acceptance to institutions that reject the vast majority of applicants.
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-px bg-neutral-100">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-[2px] bg-neutral-100">
       {schools.map((school) => (
-        <div class="bg-white p-8 flex flex-col gap-2 hover:bg-neutral-50 transition-colors">
+        <div class="bg-neutral-50 p-8 flex flex-col gap-2 hover:bg-white transition-colors border border-neutral-300">
           <span class="text-xs font-medium tracking-[1px] uppercase text-brand-amber-dark">
             {school.tier}
           </span>

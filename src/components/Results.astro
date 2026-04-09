@@ -17,7 +17,7 @@ const allResults = await getCollection('results');
       <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-3 md:text-[32px]">
         {headline}
       </h2>
-      <p class="font-body text-neutral-500 text-base">{subheadline}</p>
+      <p class="font-body text-content-on-light-muted text-base">{subheadline}</p>
     </div>
 
     {allResults.length > 0 ? (
@@ -32,10 +32,10 @@ const allResults = await getCollection('results');
             </div>
             <div>
               <p class="font-display font-bold text-base text-brand-black">{result.data.school}</p>
-              <p class="font-body text-sm text-neutral-500 mt-0.5">{result.data.program}</p>
+              <p class="font-body text-sm text-content-on-light-muted mt-0.5">{result.data.program}</p>
             </div>
             {result.data.quote && (
-              <p class="font-body text-sm text-neutral-600 leading-relaxed italic border-l-2 border-brand-amber pl-3">
+              <p class="font-body text-sm text-content-on-light-muted leading-relaxed italic border-l-2 border-brand-amber pl-3">
                 "{result.data.quote}"
               </p>
             )}

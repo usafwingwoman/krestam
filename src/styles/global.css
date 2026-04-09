@@ -18,6 +18,12 @@
   --color-content-on-dark-secondary: #D1D1D1;
   --color-content-on-dark-muted: #A0A0A0;
 
+  /* Neutral overrides */
+  --color-neutral-50: #E8E8EB;
+  --color-neutral-200: #C8C8C8;
+  --color-neutral-400: #555555;
+  --color-neutral-500: #888888;
+
   /* Border colors */
   --color-border-light: #E5E5E5;
   --color-border-dark: #2A2A2A;
@@ -27,6 +33,8 @@
   --font-body: 'DM Sans', sans-serif;
 
   /* Font sizes */
+  --text-xs: 14px;
+  --text-sm: 16px;
   --text-hero: 48px;
   --text-hero--line-height: 1.05;
   --text-hero--letter-spacing: -1.5px;

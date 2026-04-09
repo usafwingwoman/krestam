@@ -7,13 +7,14 @@ interface Stat {
 interface Props {
   eyebrow: string;
   headline: string;
+  headlineAccent: string;
   subheadline: string;
   cta: string;
   ctaHref: string;
   stats: Stat[];
 }
 
-const { eyebrow, headline, subheadline, cta, ctaHref, stats } = Astro.props;
+const { eyebrow, headline, headlineAccent, subheadline, cta, ctaHref, stats } = Astro.props;
 ---
 
 <section class="bg-neutral-50 pt-20 pb-20 px-6 md:pt-28">
@@ -23,10 +24,10 @@ const { eyebrow, headline, subheadline, cta, ctaHref, stats } = Astro.props;
       <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-amber-dark mb-5">
         {eyebrow}
       </p>
-      <h1 class="font-display font-extrabold text-[42px] leading-[1.05] tracking-[-1.5px] text-brand-black mb-5 md:text-[56px]">
-        {headline}
+      <h1 class="font-display text-[42px] leading-[1.05] tracking-[-1.5px] text-brand-black mb-5 md:text-[56px] text-balance">
+        <span class="font-extrabold">{headline}</span> <em class="text-brand-amber-dark font-extrabold">{headlineAccent}</em>
       </h1>
-      <p class="font-body text-neutral-600 text-[17px] leading-relaxed mb-8 max-w-xl">
+      <p class="font-body text-content-on-light-muted text-[17px] leading-relaxed mb-8 max-w-lg">
         {subheadline}
       </p>
       <a
@@ -37,11 +38,11 @@ const { eyebrow, headline, subheadline, cta, ctaHref, stats } = Astro.props;
       </a>
     </div>
 
-    <div class="mt-16 pt-8 border-t border-[0.5px] border-neutral-100 grid grid-cols-3 gap-6 max-w-md">
+    <div class="mt-16 grid grid-cols-3 gap-[2px] max-w-md">
       {stats.map((stat) => (
-        <div>
+        <div class="bg-neutral-50 border border-neutral-300 p-5 flex flex-col gap-1 hover:bg-white transition-colors">
           <p class="font-display font-extrabold text-2xl text-brand-black tracking-tight">{stat.value}</p>
-          <p class="font-body text-xs text-neutral-500 mt-1 leading-snug">{stat.label}</p>
+          <p class="font-body text-xs text-content-on-light-muted leading-snug">{stat.label}</p>
         </div>
       ))}
     </div>

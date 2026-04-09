@@ -20,7 +20,7 @@ const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
       <div class="aspect-[4/5] bg-neutral-100 rounded-lg border border-[0.5px] border-neutral-100 flex items-end p-6 max-w-sm md:max-w-none">
         <div>
           <p class="font-display font-bold text-lg text-brand-black">{name}</p>
-          <p class="font-body text-sm text-neutral-500 mt-1">{title}</p>
+          <p class="font-body text-sm text-content-on-light-muted mt-1">{title}</p>
         </div>
       </div>
 
@@ -31,15 +31,15 @@ const { eyebrow, name, title, bio, credentials, cta, ctaHref } = Astro.props;
           <h2 class="font-display font-extrabold text-[28px] leading-[1.1] tracking-[-0.5px] text-brand-black mb-4 md:text-[32px]">
             {name}
           </h2>
-          <p class="font-body text-neutral-500 text-sm mb-5">{title}</p>
-          <p class="font-body text-neutral-600 text-base leading-relaxed">{bio}</p>
+          <p class="font-body text-content-on-light-muted text-sm mb-5">{title}</p>
+          <p class="font-body text-content-on-light-muted text-base leading-relaxed">{bio}</p>
         </div>
 
         <ul class="space-y-3">
           {credentials.map((item) => (
             <li class="flex items-start gap-3">
               <span class="text-brand-amber-dark shrink-0 mt-0.5 text-sm">✓</span>
-              <span class="font-body text-sm text-neutral-700">{item}</span>
+              <span class="font-body text-sm text-content-on-light-secondary">{item}</span>
             </li>
           ))}
         </ul>

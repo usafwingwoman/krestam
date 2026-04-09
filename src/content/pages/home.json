@@ -1,9 +1,10 @@
 {
   "hero": {
     "eyebrow": "College & Career Counseling",
-    "headline": "Your application tells a story. Let's make it the right one.",
+    "headline": "Your application tells a story.",
+    "headlineAccent": "Let's make it the right one.",
     "subheadline": "Most applications look the same. Yours won't — we'll make sure you're someone they remember.",
-    "cta": "Book a Free Strategy Session",
+    "cta": "Start With a Strategy Session",
     "ctaHref": "/apply",
     "stats": [
       { "value": "200+", "label": "Students placed" },
@@ -157,7 +158,7 @@
     "eyebrow": "Start here",
     "headline": "Ready to build an application that gets you in?",
     "body": "Book a free 30-minute strategy session with Prof. Usman. No commitment — just a clear plan for what to do next.",
-    "cta": "Book Your Free Strategy Session",
+    "cta": "Start With a Strategy Session",
     "ctaHref": "/apply"
   },
   "footer": {

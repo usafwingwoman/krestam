@@ -24,7 +24,7 @@ const { headline, cards } = Astro.props;
       {cards.map((card) => (
         <div class="bg-white border border-[0.5px] border-neutral-100 rounded-lg p-7 flex flex-col gap-4">
           <h3 class="font-display font-bold text-[17px] text-brand-black">{card.title}</h3>
-          <p class="font-body text-sm text-neutral-600 leading-relaxed">{card.description}</p>
+          <p class="font-body text-sm text-content-on-light-muted leading-relaxed">{card.description}</p>
         </div>
       ))}
     </div>
