@@ -17,17 +17,32 @@ interface Props {
 const { eyebrow, headline, headlineAccent, subheadline, cta, ctaHref, stats } = Astro.props;
 ---
 
-<section class="bg-neutral-50 pt-20 pb-20 px-6 md:pt-28">
-  <div class="max-w-content mx-auto">
+<section class="hero-section pt-20 pb-20 px-6 md:pt-28 relative overflow-hidden">
+
+  <!-- Layer 2: Animated ember canvas -->
+  <canvas
+    class="hero-canvas absolute inset-0 w-full h-full pointer-events-none"
+    style="z-index: 1;"
+    aria-hidden="true"
+  ></canvas>
+
+  <!-- Layer 3: Film grain overlay -->
+  <div class="hero-grain absolute inset-0 pointer-events-none" style="z-index: 2;" aria-hidden="true"></div>
+
+  <!-- Layer 4: Reduced-motion static fallback (hidden by default) -->
+  <div class="hero-static absolute inset-0 pointer-events-none" style="z-index: 1;" aria-hidden="true"></div>
+
+  <!-- Hero content -->
+  <div class="max-w-content mx-auto relative" style="z-index: 10;">
 
     <div class="max-w-2xl">
-      <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-amber-dark mb-5">
+      <p class="font-body text-xs font-medium tracking-widest uppercase text-brand-amber mb-5">
         {eyebrow}
       </p>
-      <h1 class="font-display text-[42px] leading-[1.05] tracking-[-1.5px] text-brand-black mb-5 md:text-[56px] text-balance">
-        <span class="font-extrabold">{headline}</span> <em class="text-brand-amber-dark font-extrabold">{headlineAccent}</em>
+      <h1 class="font-display text-[42px] leading-[1.05] tracking-[-1.5px] text-content-on-dark-primary mb-5 md:text-[56px] text-balance">
+        <span class="font-extrabold">{headline}</span> <em class="text-brand-amber font-extrabold">{headlineAccent}</em>
       </h1>
-      <p class="font-body text-content-on-light-muted text-[17px] leading-relaxed mb-8 max-w-lg">
+      <p class="font-body text-content-on-dark-muted text-[17px] leading-relaxed mb-8 max-w-lg">
         {subheadline}
       </p>
       <a
@@ -40,12 +55,172 @@ const { eyebrow, headline, headlineAccent, subheadline, cta, ctaHref, stats } = 
 
     <div class="mt-16 grid grid-cols-3 gap-[2px] max-w-md">
       {stats.map((stat) => (
-        <div class="bg-neutral-50 border border-neutral-300 p-5 flex flex-col gap-1 hover:bg-white transition-colors">
-          <p class="font-display font-extrabold text-2xl text-brand-black tracking-tight">{stat.value}</p>
-          <p class="font-body text-xs text-content-on-light-muted leading-snug">{stat.label}</p>
+        <div class="bg-brand-dark border border-border-dark p-5 flex flex-col gap-1 hover:bg-[#222222] transition-colors">
+          <p class="font-display font-extrabold text-2xl text-content-on-dark-primary tracking-tight">{stat.value}</p>
+          <p class="font-body text-xs text-content-on-dark-muted leading-snug">{stat.label}</p>
         </div>
       ))}
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Layer 1: Base */
+  .hero-section {
+    background-color: #0A0A0B;
+  }
+
+  /* Layer 3: Film grain — tiled SVG via CSS background-image */
+  .hero-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23grain)' opacity='0.4'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+    opacity: 0.5;
+  }
+
+  /* Layer 4: Static fallback — hidden by default */
+  .hero-static {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-canvas {
+      display: none;
+    }
+    .hero-section {
+      background: radial-gradient(ellipse at 50% 85%, rgba(212, 112, 10, 0.2) 0%, transparent 70%), #0A0A0B;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const canvas = document.querySelector('.hero-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d')!;
+
+    const MIN_COUNT = 12;
+    const MAX_COUNT = 18;
+    const TARGET_COUNT = Math.floor(Math.random() * (MAX_COUNT - MIN_COUNT + 1)) + MIN_COUNT;
+
+    let rafId: number | null = null;
+    let isVisible = true;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    function rand(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    interface Particle {
+      startX: number;
+      x: number;
+      y: number;
+      radius: number;
+      speed: number;
+      sineAmp: number;
+      sineFreq: number;
+      phase: number;
+      peakOpacity: number;
+      duration: number;
+      elapsed: number;
+    }
+
+    function makeParticle(seeded = false): Particle {
+      const duration = rand(7000, 11000);
+      const startX = rand(0, canvas.width);
+      const elapsed = seeded ? rand(0, duration) : 0;
+      return {
+        startX,
+        x: startX,
+        y: seeded ? rand(0, canvas.height) : canvas.height + rand(5, 30),
+        radius: rand(2.5, 5),
+        speed: canvas.height / duration,
+        sineAmp: rand(18, 35),
+        sineFreq: rand(0.0004, 0.001),
+        phase: rand(0, Math.PI * 2),
+        peakOpacity: rand(0.28, 0.4),
+        duration,
+        elapsed,
+      };
+    }
+
+    const particles: Particle[] = Array.from({ length: TARGET_COUNT }, () => makeParticle(true));
+
+    let lastTime = performance.now();
+
+    function tick(now: number) {
+      if (!isVisible) return;
+
+      const dt = now - lastTime;
+      lastTime = now;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.elapsed += dt;
+        p.y -= p.speed * dt;
+        p.x = p.startX + Math.sin(p.elapsed * p.sineFreq + p.phase) * p.sineAmp;
+
+        // Fade in over first 15%, hold, fade out over final 25%
+        const progress = Math.min(p.elapsed / p.duration, 1);
+        let opacity: number;
+        if (progress < 0.15) {
+          opacity = (progress / 0.15) * p.peakOpacity;
+        } else if (progress < 0.75) {
+          opacity = p.peakOpacity;
+        } else {
+          opacity = ((1 - progress) / 0.25) * p.peakOpacity;
+        }
+
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+        grad.addColorStop(0,   `rgba(255, 248, 224, ${Math.min(opacity * 1.5, 1)})`); // #FFF8E0 cream core
+        grad.addColorStop(0.4, `rgba(212, 112, 10, ${opacity})`);                     // #D4700A amber mid
+        grad.addColorStop(1,   `rgba(212, 112, 10, 0)`);                              // transparent edge
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        if (p.y < -p.radius * 2 || p.elapsed >= p.duration) {
+          particles.splice(i, 1);
+        }
+      }
+
+      while (particles.length < TARGET_COUNT) {
+        particles.push(makeParticle(false));
+      }
+
+      rafId = requestAnimationFrame(tick);
+    }
+
+    rafId = requestAnimationFrame(tick);
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        isVisible = entry.isIntersecting;
+        if (isVisible && rafId === null) {
+          lastTime = performance.now();
+          rafId = requestAnimationFrame(tick);
+        } else if (!isVisible && rafId !== null) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+    });
+
+    observer.observe(canvas.closest('section') as Element);
+  })();
+</script>

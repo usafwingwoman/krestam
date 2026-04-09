@@ -1,18 +1,19 @@
 ---
 const sage = {
   initials: "SJP",
-  photo: "/images/Military-profile-photo.png",
+  photo: "/images/military-profile-photo-full.png",
   photoLeft: false,
   eyebrow: "Co-founder & Chief Strategist",
   name: "Sage J Phoenix",
   title: "U.S. Air Force Officer · Strategic Planner · Operator",
-  tagline: "Forged in Combat.\nBuilt to Lead from the Front.",
+  tagline: "A Standard Forged in Combat: Excellence in All We Do.",
   bio: [
-    "My real origin story started when I joined the U.S. Air Force as an Officer in 2003. I graduated #1 of 57 from Joint Specialized Undergraduate Navigator Training — and took home both academic awards.",
-    "Thirty-plus combat missions. Over 250 combat hours in hostile territory. An Air Medal for meritorious service. The General handing me my second award said: \"You've got a bright career ahead, Lieutenant.\" He wasn't wrong. Just early.",
-    "What followed wasn't a straight line. There were crashes. There was wreckage. There was rebuilding — book by book, decision by decision, standard by standard. Three master's degrees. Dozens of organizations rebuilt from the inside. Revenue grown 560%. Retention at 98%.",
-    "The through line was always the same: Walk in. Assess. Build. Execute. Leave it better than you found it. That's not a philosophy. That's a track record.",
-    "I bring that standard to every student we work with at Krestam — because your child's future deserves nothing less."
+    "Sage J. Phoenix — known universally as Chief — is the kind of operator most organizations never encounter, and immediately recognize when they do.",
+    "As a rated Navigator and Mission Crew Commander — where the title Chief was first earned — Chief flew 30+ combat missions and 250+ combat hours aboard one of the most classified aircraft in the U.S. military. Chief graduated #1 of 57 from Joint Specialized Undergraduate Navigator Training — taking home both academic awards. Air Medal for meritorious service.",
+    "That standard didn't retire with the uniform.",
+    "Across two decades of post-military work, Chief has built a reputation for one thing: taking complex challenges and engineering them into clear, executable outcomes. Three master's degrees — MBA, Financial Management, and Real Estate. Twenty-plus years developing high performers, designing systems that produce results, and delivering with the same zero-defect discipline the Air Force demanded.",
+    "At Krestam, Chief brings the same standards applied to combat operations to the mission of positioning your student for the future they deserve: Meticulous planning. Precise execution. Zero defects. Every time.",
+    "Your child's application is a mission. Chief treats it like one."
   ],
   stats: [
     { label: "Class rank", value: "#1 of 57" },
@@ -60,7 +61,7 @@ const founders = [sage, usman]
 
     <div class="flex flex-col gap-20">
       {founders.map((founder) => (
-        <div class={`grid grid-cols-1 gap-12 items-start pt-16 border-t border-neutral-100 first:border-t-0 first:pt-0 ${founder.photoLeft ? 'md:grid-cols-[40%_60%]' : 'md:grid-cols-[60%_40%]'}`}>
+        <div class={`grid grid-cols-1 gap-12 items-stretch pt-16 border-t border-neutral-100 first:border-t-0 first:pt-0 ${founder.photoLeft ? 'md:grid-cols-[40%_60%]' : 'md:grid-cols-[60%_40%]'}`}>
 
           <div class={`flex flex-col gap-5 ${founder.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
             <div>
@@ -95,7 +96,7 @@ const founders = [sage, usman]
 
           <div class={`flex flex-col gap-6 ${founder.photoLeft ? 'md:order-1' : 'md:order-2'}`}>
             {founder.photo ? (
-              <div class="sticky top-8 h-full min-h-[600px] rounded-xl overflow-hidden">
+              <div class="h-full min-h-[600px] rounded-xl overflow-hidden">
                 <img
                   src={founder.photo}
                   alt={`Photo of ${founder.name}`}
